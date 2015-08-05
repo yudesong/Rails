@@ -1,48 +1,35 @@
-<script type="text/javascript">
-var form = Ext.create("Ext.form.Panel", {
-    width: 500,
-    height: 300,
-    margin: 20,
-    title: "Form",
-    renderTo: Ext.getBody(),
-    collapsible: true,  //可折叠
-    autoScroll: true,   //自动创建滚动条
-    defaultType: 'textfield',
-    defaults: {
-        anchor: '100%',
-    },
-    fieldDefaults: {
-        labelWidth: 80,
-        labelAlign: "left",
-        flex: 1,
-        margin: 5
-    },
-    items: [
-        {
-            xtype: "container",
-            layout: "hbox",
-            items: [
-                { xtype: "textfield", name: "name", fieldLabel: "姓名", allowBlank: false },
-                { xtype: "numberfield", name: "age", fieldLabel: "年龄", decimalPrecision: 0, vtype: "age" }
-            ]
-        },
-        {
-            xtype: "container",
-            layout: "hbox",
-            items: [
-                { xtype: "textfield", name: "phone", fieldLabel: "电话", allowBlank: false, emptyText: "电话或手机号码" },
-                { xtype: "textfield", name: "phone", fieldLabel: "邮箱", allowBlank: false, emptyText: "Email地址", vtype: "email" }
-            ]
-        },
-        {
-            xtype: "textareafield",
-            name: "remark",
-            fieldLabel: "备注",
-            height: 50
-        }
-    ],
-    buttons: [
-        { xtype: "button", text: "保存" }
-    ]
-});
+  <script type="text/javascript">
+    function check()
+    {
+      if($("#name").val()=="" || $("#passwd").val()=="")
+      {
+         alert("用户名或密码不能为空!");
+      }else
+      {
+          $("#loginForm").submit();
+      }
+   }
 </script>
+  <div class="container-fluid">
+    <form class="form-horizontal" method="get" action="/welcome/login" id="loginForm">
+      <fieldset>
+        <legend>用户登陆</legend>
+        <div class="control-group">
+          <label class="control-label" for="username">用户名:</label>
+          <div class="controls">
+            <input type="text" class="input-xlarge" id="name" name="name">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="password">密&nbsp;&nbsp;&nbsp;码:</label>
+          <div class="controls">
+            <input type="password" class="input-xlarge" id="passwd" name="passwd">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-primary" onclick="check()">登陆</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-primary">退出</button>
+        </div>      
+      </fieldset>
+    </form>
+ </div>
