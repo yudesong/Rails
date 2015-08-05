@@ -1,1 +1,6 @@
 Rails 通讯录管理
+rails new blog
+cd blog
+rails generate scaffold Product title:string description:text image_url:string price:decimal
+rake db:migrate
+rails s
