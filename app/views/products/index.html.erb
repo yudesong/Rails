@@ -2,6 +2,32 @@
 
 <h1>Listing Products</h1>
 
+<% @products.each do |product| %>
+<div style="width:600px;background:#ccc;margin:10px;">
+    <div style="float:left;margin-right:20px;"><img src="<%= product.image_url%>" style="width:100px;height:100px;"></div> 
+    <div style="float:left;width:200px;">
+        <div style="margin-top:10px;"><strong style="font-size:16px"><%= product.title%></strong></div>
+        <div><%= truncate(strip_tags(product.description), :lenght =>80) %></div>
+    </div>
+    <div style="float:left;width:60px;">
+        <div style="margin-top:40px;margin-left:20px;"><strong style="font-size:16px"><%= product.price%></strong></div>
+    </div>
+    <div style="float:left;width:150px;margin-left:40px;">
+      <ul  style="list-style:none;margin:20px;">
+              <li><%= link_to 'Show', product %></li>
+              <li><%= link_to 'Edit', edit_product_path(product) %></li>
+              <li><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    </div>
+    <div style="clear:both"></div>
+</div>
+<% end %>
+<br>
+<%= link_to 'New Product', new_product_path %>
+
+
+
+<!--
 <table>
   <thead>
     <tr>
@@ -15,11 +41,11 @@
 
   <tbody>
     <% @products.each do |product| %>
-      <tr>
-        <td><%= product.title %></td>
-        <td><%= product.description %></td>
-        <td><img src="<%= product.image_url %>"/></td>
-        <td><%= product.price %></td>
+      <tr style="margin:5px;">
+        <td style="width:60px"><%= product.title %></td>
+        <td style="width:200px;"><%= truncate(strip_tags(product.description), :lenght =>80) %></td>
+        <td><img src="<%= product.image_url %>" width="100" height="100"/></td>
+        <td style="width:60px;" align="center"><%= product.price %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,6 +54,7 @@
   </tbody>
 </table>
 
+-->
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+
