@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<% unless cart.line_items.empty?%>
+<div>Your Cart</div>
+<table>
+<%= render(cart.line_items)%>
+<!--
+<% @cart.line_items.each do |item|%>
+<tr>
+     <td><%= item.quantity%>&times;</td>
+     <td><%= item.product.title %></td>
+     <td><%= number_to_currency(item.total_price)%></td>
+</tr>     
+ <% end %> 
+--> 
+<tr>
+    <td>Total</td>
+    <td><%= number_to_currency(cart.total_price)%></td>
+</tr>
+</table>
+<%= button_to "Checkout", new_order_path, :method => :get%>
+<%= button_to 'Empty cart',cart, :method => :delete, :confirm => 'Are you sure?'%>
+<% end %>

@@ -6,3 +6,60 @@ body {
 a {
   color: #00B7FF;
 }
+
+hr {
+  height:1px;
+  border:none;
+  border-top:1px dashed #0066CC;
+}
+
+img {
+  width:100px;
+  height:100px;	
+}
+
+strong {
+  font-size:16px;
+}
+
+#head {
+     
+}
+
+#content {
+
+}
+
+#left {
+  float: left;
+
+}
+
+#right {
+  float:left;
+  margin-left: 70px;
+  margin-top: 10px;
+}
+
+#foot {
+  clear: both;
+}
+#item {
+  width:750px;
+  height:150px;	  
+  background:#ccc;
+  margin:5px;
+  padding:1px;
+}
+
+#item_img {
+  float:left;
+  width:100px;
+  margin:20px;	
+}
+
+#item_desc {
+  float:left;
+  width:600px;
+  margin-top:20px;	
+}

@@ -1,19 +1,31 @@
 <% if notice %>
 <p id="notice"><%= notice%>
 <% end %>
-<h1>Your Pragmatic Catalog</h1>
-<hr style="height:1px;border:none;border-top:1px dashed #0066CC;">
-<% @products.each do |product|%>
-<div style="width:800px;background:#ccc;margin:5px;padding:1px;height:150px;">
-<div style="float:left;width:100px;margin:20px;">
-<img src="<%= product.image_url%>" style="width:100px;height:100px;"/>
+<div id="head">
+     <h1>Your Pragmatic Catalog</h1>
+     <hr>
 </div>
-<div style="float:left;width:600px;margin-top:20px;">
-<strong style="font-size:16px;"><%= product.title%></strong><br>
-<%= truncate(strip_tags(product.description), :length => 120)%><br>
-<%= sprintf("$%0.02f",product.price)%>
-<%= button_to 'Add to Cart', line_items_path(:product_id => product)%>
+<div id="content">
+   <div id="left">
+   	<% @products.each do |product|%>
+	<div id="item">
+	       <div id="item_img">
+	            	<img src="<%= product.image_url%>"/>
+	       </div>
+	      <div id="item_desc">
+		<strong><%= product.title%></strong><br>
+		<%= truncate(strip_tags(product.description), :length => 120)%><br>
+		<%= sprintf("$%0.02f",product.price)%>
+		<%= button_to 'Add to Cart', line_items_path(:product_id => product), :remote => true%>
+	      </div>
+	      <div style="clear:both"></div>
+	</div>
+	<% end %>
+   </div>	
+   <div id="right">
+   	<%= render @cart%>
+   </div>
+   <div id="both"></div>
 </div>
-<div style="clear:both"></div>
+<div id="foot">
 </div>
-<% end %>

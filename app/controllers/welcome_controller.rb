@@ -8,8 +8,7 @@ class WelcomeController < ApplicationController
         @passwd=params[:passwd]
         @user=Manager.find_by_name_and_passwd(@name,@passwd)
          if @user!=nil
-          
-             redirect_to :action =>"index" ,:controller=>"users"  
+             redirect_to :action =>"index" ,:controller=>"store"  
           else   
              redirect_to :action =>"index"  
           end
