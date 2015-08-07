@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  resources :line_items
+  resources :carts
+  get 'store/index'
+
   resources :products
   resources :users
   get 'welcome/index'
@@ -7,8 +12,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
-
+#  root 'welcome#index'
+  root :to => 'store#index', :as => 'store'
   get 'welcome/login'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

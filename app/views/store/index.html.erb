@@ -1,0 +1,19 @@
+<% if notice %>
+<p id="notice"><%= notice%>
+<% end %>
+<h1>Your Pragmatic Catalog</h1>
+<hr style="height:1px;border:none;border-top:1px dashed #0066CC;">
+<% @products.each do |product|%>
+<div style="width:800px;background:#ccc;margin:5px;padding:1px;height:170px;">
+<div style="float:left;width:100px;margin:13px;">
+<img src="<%= product.image_url%>" style="width:100px;height:100px;"/>
+</div>
+<div style="float:left;width:600px;margin-top:10px;">
+<strong style="font-size:16px;"><%= product.title%></strong><br>
+<%= truncate(strip_tags(product.description), :length => 120)%><br>
+<%= sprintf("$%0.02f",product.price)%>
+<%= button_to 'Add to Cart', line_items_path(:product_id => product)%>
+</div>
+<div style="clear:both"></div>
+</div>
+<% end %>

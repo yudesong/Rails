@@ -10,7 +10,7 @@
         <div><%= truncate(strip_tags(product.description), :lenght =>80) %></div>
     </div>
     <div style="float:left;width:60px;">
-        <div style="margin-top:40px;margin-left:20px;"><strong style="font-size:16px"><%= product.price%></strong></div>
+        <div style="margin-top:40px;margin-left:20px;"><strong style="font-size:16px"><%= sprintf("$%0.02f",product.price)%></strong></div>
     </div>
     <div style="float:left;width:150px;margin-left:40px;">
       <ul  style="list-style:none;margin:20px;">
