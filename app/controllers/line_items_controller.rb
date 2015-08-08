@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+    skip_before_filter :authorize, :only => :create 
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
