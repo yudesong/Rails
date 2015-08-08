@@ -10,24 +10,26 @@
       </ul>
     </div>
   <% end %>
-
+<div style="margin-left:40px;margin-top:40px;">
 <fieldset>
   <legend>Enter User Details</legend>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name ,:size =>40 %>
-  </div>
-  <div class="field">
-    <%= f.label :password ,'Password' %><br>
-    <%= f.password_field :password, :size =>40 %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation ,'Confirm'%><br>
-    <%= f.password_field :password_confirmation, :size => 40 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <table>
+    <tr>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name ,:size =>40 %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :password ,'Password' %></td>
+      <td><%= f.password_field :password, :size =>40 %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :password_confirmation ,'Confirm'%></td>
+      <td><%= f.password_field :password_confirmation, :size => 40 %></td>
+    </tr>    
+    <tr>
+      <td colspan="2"><%= f.submit %></td>
+    </tr>
+  </table>
   </fieldset>
 <% end %>
-
+</div>

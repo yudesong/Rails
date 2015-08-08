@@ -10,25 +10,30 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <!-- add textarea rows-->
-    <%= f.text_area :description ,:rows=>6 %>
-  </div>
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div style="margin-left:40px;margin-top:40px;">
+<fieldset>
+  <legend>Enter Products Details</legend>
+    <table>
+        <tr>
+          <td><%= f.label :title %></td>
+          <td><%= f.text_field :title %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :description %></td>
+          <td><%= f.text_area :description ,:rows=>6 %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :image_url %></td>
+          <td><%= f.text_field :image_url %></td>
+        </tr>        
+        <tr>
+          <td><%= f.label :price %></td>
+          <td><%= f.text_field :price %></td>
+        </tr> 
+        <tr>
+          <td colspan="2"><%= f.submit %></td>
+        </tr>
+    </table>
+  </fieldset>
 <% end %>
+</div>
